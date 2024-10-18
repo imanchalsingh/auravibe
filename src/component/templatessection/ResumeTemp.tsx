@@ -323,7 +323,6 @@ function ResumeTemp() {
               {text.text}
             </div>
           ))}
-
           {/* {/Image Rendering} */}
           {resumetemplate.image?.map((image, index) => (
             <div key={index}>
