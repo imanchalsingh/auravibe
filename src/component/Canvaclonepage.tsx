@@ -36,7 +36,6 @@ const InteractiveElement: React.FC = () => {
         return null;
     }
   };
-
   return (
     <div
       style={{
