@@ -1,0 +1,84 @@
+/* Target the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #bebebe;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b1b1b1;
+}
+.app {
+  display: flex;
+}
+
+.left-nav {
+  width: 200px;
+  padding: 10px;
+  background: #f0f0f0;
+}
+
+.canvas {
+  flex: 1;
+  position: relative;
+  background-color: #e8e8e8;
+  height: 100vh;
+  padding: 20px;
+}
+
+.element {
+  position: absolute;
+  padding: 5px;
+  border: 1px solid transparent;
+  cursor: move;
+}
+
+.selected {
+  border: 2px solid #00f;
+}
+
+.shape {
+  background-color: #f00;
+  height: 100%;
+  width: 100%;
+}
+
+.edit-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fff;
+  padding: 3px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  display: flex;
+  padding: 10px;
+  background-color: #434343;
+}
+
+.toolbar button {
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.canvas {
+  flex: 1;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
