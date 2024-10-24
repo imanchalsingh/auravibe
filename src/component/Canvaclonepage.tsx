@@ -94,8 +94,7 @@ const InteractiveElement: React.FC = () => {
           <p>Apps</p>
         </div>
       </div>
-      <div
-      
+      <div     
         style={{
           display: "flex",
           flexDirection: "column",
