@@ -9,10 +9,6 @@ import PanoramaIcon from "@mui/icons-material/Panorama";
 import SevenKPlusIcon from "@mui/icons-material/SevenKPlus";
 import WebIcon from "@mui/icons-material/Web";
 import ArticleIcon from "@mui/icons-material/Article";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import AspectRatioIcon from "@mui/icons-material/AspectRatio";
-import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
-import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import Logopage from "./Logopage";
 import Websitepage from "./Websitepage"
 const InteractiveElement: React.FC = () => {
@@ -175,86 +171,12 @@ const InteractiveElement: React.FC = () => {
             <small>Documents</small>
           </p>
         </div>
-        <div
-          style={{ textAlign: "center", padding: "10px" }}
-          onClick={() => {
-            setCurrentSection("Generate Image");
-          }}
-        >
-          <YouTubeIcon
-            sx={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#ff0000",
-              borderRadius: "50%",
-              padding: "5px",
-              color: "white",
-            }}
-          />
-          <p>
-            <small>Thumbnails</small>
-          </p>
-        </div>
+        
 
-        <div
-          style={{ textAlign: "center", padding: "10px" }}
-          onClick={() => {
-            setCurrentSection("Generate Image");
-          }}
-        >
-          <AspectRatioIcon
-            sx={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#d9d9d9",
-              borderRadius: "50%",
-              padding: "5px",
-            }}
-          />
-          <p>
-            <small>Custom Size</small>
-          </p>
-        </div>
-        <div
-          style={{ textAlign: "center", padding: "10px" }}
-          onClick={() => {
-            setCurrentSection("Generate Image");
-          }}
-        >
-          <CloudUploadOutlinedIcon
-            sx={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#d9d9d9",
-              borderRadius: "50%",
-              padding: "5px",
-            }}
-          />
-          <p>
-            <small>Upload</small>
-          </p>
-        </div>
-        <div
-          style={{ textAlign: "center", padding: "10px" }}
-          onClick={() => {
-            setCurrentSection("Generate Image");
-          }}
-        >
-          <MoreHorizOutlinedIcon
-            sx={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#d9d9d9",
-              borderRadius: "50%",
-              padding: "5px",
-            }}
-          />
-          <p>
-            <small>More</small>
-          </p>
-        </div>
+       
+       
       </div>
-      <div>{renderSection()}</div>
+      <div style={{width:"75vw"}}>{renderSection()}</div>
     </div>
   );
 };

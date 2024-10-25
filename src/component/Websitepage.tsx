@@ -1,300 +1,350 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Rnd, RndResizeCallback, RndDragCallback } from 'react-rnd';
-import html2canvas from 'html2canvas'; // For capturing screenshots
+import React, { useState } from "react";
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from ".././components/ui/dialog";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from ".././components/ui/card";
+import { Button } from ".././components/ui/button";
+import { Input } from ".././components/ui/input";
+import { Label } from ".././components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from ".././components/ui/select"; // replace with your actual UI library import
+import { Badge } from ".././components/ui/badge";
 
-// Define element types
-type ElementType = 'header' | 'text' | 'button' | 'image';
-
-// Define the structure of an element
-interface Element {
+// Define the Website type
+interface Website {
   id: number;
-  component: JSX.Element;
-  type: ElementType;
-  width: number;
-  height: number;
-  x: number;
-  y: number;
-  content: string; // To hold the text content for editable elements
+  name: string;
+  status: "published" | "draft";
+  template: string;
 }
 
-// Styled Components for layout and UI
-const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #f9f9f9;
-  min-height: 100vh;
-`;
+const InteractiveElement = () => {
+  const [websites, setWebsites] = useState<Website[]>([
+    {
+      id: 1,
+      name: "My Portfolio",
+      status: "published",
+      template: "Professional",
+    },
+    { id: 2, name: "Blog Site", status: "draft", template: "Minimalist" },
+  ]);
+  const [selectedWebsite, setSelectedWebsite] = useState<Website | null>(null);
+  const [isCreating, setIsCreating] = useState(false);
+  const [newWebsiteName, setNewWebsiteName] = useState("");
+  const [newWebsiteTemplate, setNewWebsiteTemplate] = useState("");
+  const [showTemplates, setShowTemplates] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
 
-const Toolbar = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-`;
+  const templates = [
+    { name: "Professional", icon: "👔" },
+    { name: "Minimalist", icon: "🖤" },
+    { name: "Creative", icon: "🎨" },
+    { name: "E-commerce", icon: "🛒" },
+  ];
 
-const PreviewContainer = styled.div`
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  min-height: 400px;
-  position: relative;
-`;
-
-const NavBar = styled.div`
-  background-color: #333;
-  padding: 10px;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const PageNav = styled.div`
-  display: flex;
-  gap: 10px;
-`;
-
-const PageButton = styled.button`
-  background-color: #fff;
-  color: #333;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  &:hover {
-    background-color: #ddd;
-  }
-`;
-
-const DeleteButton = styled.button`
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-`;
-
-const UploadedImagePreview = styled.img`
-  max-width: 100%;
-  max-height: 200px;
-  margin-top: 20px;
-`;
-
-const PreviewNav = styled.nav`
-  display: flex;
-  justify-content: center;
-  background-color: #333;
-  padding: 10px;
-`;
-
-const PreviewNavLink = styled.button`
-  background-color: #fff;
-  color: #333;
-  margin: 0 10px;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  &:hover {
-    background-color: #ddd;
-  }
-`;
-
-// Editable component for inline editing
-const EditableElement = styled.div<{ isEditing: boolean }>`
-  border: ${({ isEditing }) => (isEditing ? '1px solid blue' : 'none')};
-  padding: 5px;
-  cursor: ${({ isEditing }) => (isEditing ? 'text' : 'move')};
-`;
-
-const App: React.FC = () => {
-  const [pages, setPages] = useState<number[]>([1]); // List of page numbers
-  const [activePage, setActivePage] = useState<number>(1); // The currently active page
-  const [elementsByPage, setElementsByPage] = useState<{ [key: number]: Element[] }>({ 1: [] }); // Elements for each page
-  const [isPreviewMode, setIsPreviewMode] = useState<boolean>(false); // Preview mode toggle
-  const [uploadedImage, setUploadedImage] = useState<string | null>(null); // Store the uploaded image URL
-
-  // Function to add elements to the current page
-  const addElement = (element: JSX.Element, type: ElementType, content: string) => {
-    const newElement: Element = {
-      id: Date.now(),
-      component: element,
-      type,
-      width: 200,
-      height: 100,
-      x: 50,
-      y: 50,
-      content, // Store the content for editable elements
-    };
-    setElementsByPage((prevElements) => ({
-      ...prevElements,
-      [activePage]: [...(prevElements[activePage] || []), newElement],
-    }));
-  };
-
-  // Function to delete an element by ID on the current page
-  const deleteElement = (id: number) => {
-    setElementsByPage((prevElements) => ({
-      ...prevElements,
-      [activePage]: prevElements[activePage].filter((el) => el.id !== id),
-    }));
-  };
-
-  // Adding specific elements
-  const addHeader = () => {
-    const header = <h1 style={{ color: 'blue' }}>Header</h1>;
-    addElement(header, 'header', 'Header');
-  };
-
-  const addText = () => {
-    const text = <p style={{ fontSize: '18px', color: 'black' }}>This is a text element</p>;
-    addElement(text, 'text', 'This is a text element');
-  };
-
-  const addButton = () => {
-    const button = <button style={{ padding: '10px 20px', backgroundColor: 'green', color: 'white' }}>Click Me</button>;
-    addElement(button, 'button', 'Click Me');
-  };
-
-  // Function to handle image upload
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-      const imageUrl = URL.createObjectURL(file);
-      setUploadedImage(imageUrl);
-      const imageElement = <img src={imageUrl} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '100%' }} />;
-      addElement(imageElement, 'image', imageUrl);
+  const handleCreateWebsite = () => {
+    if (newWebsiteName.trim() && newWebsiteTemplate) {
+      const newWebsite: Website = {
+        id: websites.length + 1,
+        name: newWebsiteName.trim(),
+        status: "draft",
+        template: newWebsiteTemplate,
+      };
+      setWebsites([...websites, newWebsite]);
+      setNewWebsiteName("");
+      setNewWebsiteTemplate("");
+      setIsCreating(false);
     }
   };
 
-  // Adding pages and handling navigation
-  const addPage = () => {
-    const newPage = pages.length + 1;
-    setPages([...pages, newPage]);
-    setElementsByPage((prevElements) => ({
-      ...prevElements,
-      [newPage]: [],
-    }));
-    setActivePage(newPage);
+  const handleDeleteWebsite = (id: number) => {
+    setWebsites(websites.filter((website) => website.id !== id));
+    setSelectedWebsite(null);
   };
 
-  // Function to handle drag
-  const handleDragStop: RndDragCallback = (e, d) => {
-    const { id } = d.node.dataset; // Use dataset to access ID of the element being dragged
-    if (!id) return;
-
-    setElementsByPage((prevElements) => ({
-      ...prevElements,
-      [activePage]: prevElements[activePage].map((el) =>
-        el.id === parseInt(id) ? { ...el, x: d.x, y: d.y } : el
-      ),
-    }));
+  const handleEditWebsite = (website: Website) => {
+    setSelectedWebsite(website);
+    setNewWebsiteName(website.name);
+    setNewWebsiteTemplate(website.template);
+    setIsCreating(true); // Open the create dialog for editing
   };
 
-  // Function to handle resize
-  const handleResizeStop: RndResizeCallback = (e, direction, ref, delta, position) => {
-    const { id } = ref.dataset; // Use dataset to access ID of the element being resized
-    if (!id) return;
-
-    setElementsByPage((prevElements) => ({
-      ...prevElements,
-      [activePage]: prevElements[activePage].map((el) =>
-        el.id === parseInt(id)
-          ? { ...el, width: parseFloat(ref.style.width), height: parseFloat(ref.style.height), x: position.x, y: position.y }
-          : el
-      ),
-    }));
+  const handleUpdateWebsite = (updatedWebsite: Website) => {
+    setWebsites(
+      websites.map((w) => (w.id === updatedWebsite.id ? updatedWebsite : w))
+    );
+    setSelectedWebsite(updatedWebsite);
+    setIsCreating(false); // Close the dialog after updating
   };
 
-  // Capture the current page as an image
-  const saveAsImage = () => {
-    const previewElement = document.getElementById('preview-container');
-    if (previewElement) {
-      html2canvas(previewElement).then((canvas) => {
-        const link = document.createElement('a');
-        link.download = `page-${activePage}.png`;
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-      });
+  const handleConfirmUpdate = () => {
+    if (selectedWebsite) {
+      const updatedWebsite: Website = {
+        ...selectedWebsite,
+        name: newWebsiteName.trim(),
+        template: newWebsiteTemplate,
+      };
+      handleUpdateWebsite(updatedWebsite);
     }
-  };
-
-  // Inline editing handler
-  const handleEdit = (id: number, newContent: string) => {
-    setElementsByPage((prevElements) => ({
-      ...prevElements,
-      [activePage]: prevElements[activePage].map((el) =>
-        el.id === id ? { ...el, content: newContent } : el
-      ),
-    }));
   };
 
   return (
-    <AppContainer>
-      <NavBar>
-        <PageNav>
-          {pages.map((page) => (
-            <PageButton key={page} onClick={() => setActivePage(page)}>
-              Page {page}
-            </PageButton>
-          ))}
-          <PageButton onClick={addPage}>+ Add Page</PageButton>
-        </PageNav>
-        <button onClick={() => setIsPreviewMode(!isPreviewMode)}>
-          {isPreviewMode ? 'Exit Preview' : 'Preview'}
-        </button>
-        <button onClick={saveAsImage}>Save as Image</button>
-      </NavBar>
+    <div className="p-6 max-w-6xl mx-auto bg-gray-100 rounded-xl shadow-lg">
+      <h1 className="text-4xl font-bold mb-8 text-center text-blue-600">
+        Website Creator Dashboard
+      </h1>
 
-      <h1>Website Creator - Page {activePage}</h1>
-
-      {!isPreviewMode && (
-        <Toolbar>
-          <button onClick={addHeader}>Add Header</button>
-          <button onClick={addText}>Add Text</button>
-          <button onClick={addButton}>Add Button</button>
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
-        </Toolbar>
-      )}
-
-      <PreviewContainer id="preview-container">
-        {elementsByPage[activePage]?.map((el) => (
-          <Rnd
-            key={el.id}
-            data-id={el.id}
-            bounds="parent"
-            position={{ x: el.x, y: el.y }}
-            size={{ width: el.width, height: el.height }}
-            onDragStop={handleDragStop}
-            onResizeStop={handleResizeStop}
+      <div className="mb-6 flex justify-between items-center">
+        <Button
+          onClick={() => setIsCreating(true)}
+          className="bg-green-500 hover:bg-green-600 text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 mr-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
           >
-            <EditableElement
-              isEditing={isPreviewMode}
-              contentEditable={!isPreviewMode}
-              suppressContentEditableWarning
-              onBlur={(e) => handleEdit(el.id, e.currentTarget.textContent || '')}
+            <path
+              fillRule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              clipRule="evenodd"
+            />
+          </svg>
+          Create New Website
+        </Button>
+        <div>
+          <Button
+            onClick={() => setShowTemplates(true)}
+            className="mr-2 bg-purple-500 hover:bg-purple-600 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 mr-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-              {el.type === 'header' && <h1>{el.content}</h1>}
-              {el.type === 'text' && <p>{el.content}</p>}
-              {el.type === 'button' && <button>{el.content}</button>}
-              {el.type === 'image' && <img src={el.content} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '100%' }} />}
-            </EditableElement>
-          </Rnd>
-        ))}
-        {uploadedImage && (
-          <div style={{ marginTop: '20px' }}>
-            <h2>Uploaded Image:</h2>
-            <UploadedImagePreview src={uploadedImage} alt="Uploaded Preview" />
-          </div>
-        )}
-      </PreviewContainer>
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+            </svg>
+            Templates
+          </Button>
+          <Button
+            onClick={() => setShowAnalytics(true)}
+            className="bg-blue-500 hover:bg-blue-600 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 mr-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+            </svg>
+            Analytics
+          </Button>
+        </div>
+      </div>
 
-      {!isPreviewMode && (
-        <DeleteButton onClick={() => deleteElement(elementsByPage[activePage]?.[elementsByPage[activePage].length - 1]?.id || 0)}>
-          Delete Element
-        </DeleteButton>
+      {isCreating && (
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle>
+              {selectedWebsite ? "Edit Website" : "Create New Website"}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="websiteName">Website Name</Label>
+                <Input
+                  id="websiteName"
+                  type="text"
+                  placeholder="Enter website name"
+                  value={newWebsiteName}
+                  onChange={(e) => setNewWebsiteName(e.target.value)}
+                />
+              </div>
+              <div>
+                <Label htmlFor="websiteTemplate">Choose Template</Label>
+                <Select
+                  onValueChange={setNewWebsiteTemplate}
+                  defaultValue={newWebsiteTemplate}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a template" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {templates.map((template) => (
+                      <SelectItem key={template.name} value={template.name}>
+                        {template.icon} {template.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="flex justify-end space-x-2">
+                <Button
+                  onClick={
+                    selectedWebsite ? handleConfirmUpdate : handleCreateWebsite
+                  }
+                  className="bg-blue-500 hover:bg-blue-600 text-white"
+                >
+                  {selectedWebsite ? "Update" : "Create"}
+                </Button>
+                <Button onClick={() => setIsCreating(false)} variant="outline">
+                  Cancel
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       )}
-    </AppContainer>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Your Websites</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {websites.map((website) => (
+              <div
+                key={website.id}
+                className="flex items-center justify-between mb-4 p-3 bg-white rounded-lg shadow"
+              >
+                <div>
+                  <h3 className="font-semibold text-lg">{website.name}</h3>
+                  <Badge className="bg-blue-100 text-blue-600">
+                    {website.status}
+                  </Badge>
+                  <p className="text-gray-600">Template: {website.template}</p>
+                </div>
+                <div>
+                  <Button
+                    onClick={() => handleEditWebsite(website)}
+                    className="bg-yellow-500 hover:bg-yellow-600 text-white"
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    onClick={() => handleDeleteWebsite(website.id)}
+                    className="bg-red-500 hover:bg-red-600 text-white"
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </div>
+
+      <Dialog open={showAnalytics} onOpenChange={setShowAnalytics}>
+        <DialogContent className="max-w-4xl">
+          <DialogHeader>
+            <DialogTitle>Website Analytics</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Visitor Statistics</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-64">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                      data={[
+                        { name: "Jan", visits: 4000 },
+                        { name: "Feb", visits: 3000 },
+                        { name: "Mar", visits: 5000 },
+                        { name: "Apr", visits: 4500 },
+                        { name: "May", visits: 6000 },
+                      ]}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <Tooltip />
+                      <Line type="monotone" dataKey="visits" stroke="#8884d8" />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              </CardContent>
+            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Total Visits</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-4xl font-bold text-blue-600">22,500</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Avg. Time on Site</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-4xl font-bold text-green-600">3m 45s</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Bounce Rate</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-4xl font-bold text-yellow-600">35%</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={showTemplates} onOpenChange={setShowTemplates}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Website Templates</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-2 gap-4">
+            {templates.map((template) => (
+              <Card key={template.name} className="cursor-pointer hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <span className="text-2xl mr-2">{template.icon}</span>
+                    {template.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-500">Click to preview and select</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </div>
   );
 };
 
-export default App;
+export default InteractiveElement;
