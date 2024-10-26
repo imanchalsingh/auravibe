@@ -105,25 +105,24 @@ const resumeTemplates: Resumetemp[] = [
     id: "1",
     texts: [
       {
-        text: "Anchal Singh",
+        text: "Charlotte",
         position: "top-center",
         style: {
           color: "black",
           fontSize: "20px",
           fontWeight: "bold",
           fontFamily: "Rancho",
-          paddingLeft: "10px",
         },
       },
       {
-        text: "Frontend Developer",
+        text: "Sales Manager",
         position: "top-center",
         style: {
           color: "black",
           paddingTop: "25px",
           fontSize: "8px",
           width: "50%",
-          paddingLeft: "20px",
+          paddingLeft: "25px",
         },
       },
       {
@@ -185,6 +184,7 @@ const resumeTemplates: Resumetemp[] = [
         style: {
           width: "50px",
           margin: "10px",
+          borderRadius: "10px",
         },
       },
     ],
@@ -291,6 +291,101 @@ const resumeTemplates: Resumetemp[] = [
     id: "3",
     texts: [
       {
+        text: "Amelia",
+        position: "top-center",
+        style: {
+          color: "#66ccff",
+          fontSize: "14px",
+          fontWeight: "bold",
+          width: "100%",
+          paddingLeft: "10px",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "20px",
+          fontSize: "8px",
+          width: "100%",
+          paddingLeft: "10px",
+        },
+      },
+      {
+        text: "",
+        position: "after-top-left",
+        style: {
+          marginTop: "15px",
+          fontFamily: "DM Serif Text",
+          backgroundColor: "#66ccff",
+          width: "100%",
+          height: "2px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "#66ccff",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+          fontFamily: "DM Serif Text",
+          paddingLeft: "10px",
+          width: "98%",
+        },
+      },
+      {
+        text: "Experience",
+        position: "before-center-left",
+        style: {
+          color: "#66ccff",
+          paddingTop: "25%",
+          fontSize: "10px",
+          fontWeight: "bold",
+          fontFamily: "DM Serif Text",
+          width: "95%",
+        },
+      },
+      {
+        text: "Skills",
+        position: "center-left",
+        style: {
+          color: "#66ccff",
+          paddingTop: "40%",
+          fontSize: "10px",
+          fontWeight: "bold",
+          fontFamily: "DM Serif Text",
+        },
+      },
+      {
+        text: "Programming Languages: HTML, CSS, JavaScript, TypeScript, C++. Frameworks & Libraries: React, Redux, Bootstrap, Tailwind CSS. Tools & Technologies: Git, Axios, React Query, Material UI, Chart.js. Web Development: Responsive Design, RESTful APIs, User Authentication Database Management: (Add any database technologies you are familiar with, e.g., MongoDB, MySQL, Firebase) Soft Skills: Problem-solving, Communication, Team Collaboration, Time Management",
+        position: "after-center-left",
+        style: {
+          color: "black",
+          paddingTop: "50%",
+          fontSize: "5px",
+          fontFamily: "DM Serif Text",
+          width: "75%",
+        },
+      },
+      {
+        text: "...",
+        position: "top-right",
+        style: {
+          color: "black",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+    ],
+  },
+  {
+    id: "4",
+    texts: [
+      {
         text: "Christina Morillo",
         position: "top-center",
         style: {
@@ -300,9 +395,7 @@ const resumeTemplates: Resumetemp[] = [
           backgroundColor: "#001a33",
           width: "100%",
           paddingBottom: "20px",
-          paddingLeft:"30%",
-          
-  
+          paddingLeft: "30%",
         },
       },
       {
@@ -314,7 +407,6 @@ const resumeTemplates: Resumetemp[] = [
           fontSize: "8px",
           width: "50%",
           paddingLeft: "20px",
-        
         },
       },
       {
@@ -325,7 +417,7 @@ const resumeTemplates: Resumetemp[] = [
           paddingTop: "25%",
           fontSize: "10px",
           fontWeight: "bold",
-          width: "50%",
+          width: "55%",
         },
       },
       {
@@ -336,7 +428,17 @@ const resumeTemplates: Resumetemp[] = [
           paddingTop: "65%",
           fontSize: "10px",
           fontWeight: "bold",
-          width: "50%",
+          width: "55%",
+        },
+      },
+      {
+        text: "",
+        position: "horizontal-center",
+        style: {
+          backgroundColor: "#001a33",
+          marginTop: "26%",
+          width: "1px",
+          height: "100%",
         },
       },
       {
@@ -391,85 +493,13 @@ const resumeTemplates: Resumetemp[] = [
           margin: "10px",
           height: "40px",
           borderRadius: "50%",
+          padding: "3px",
         },
       },
     ],
-  },
-  {
-    id: "4",
-    texts: [
-      {
-        text: "Anchal Singh",
-        position: "top-center",
-        style: {
-          color: "black",
-          fontSize: "20px",
-          fontWeight: "bold",
-          fontFamily: "Rancho",
-        },
-      },
-      {
-        text: "Frontend Developer",
-        position: "top-center",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "8px",
-          width: "50%",
-          paddingLeft: "20px",
-        },
-      },
-      {
-        text: "Education",
-        position: "after-top-left",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Skill",
-        position: "center-left",
-        style: {
-          color: "black",
-          paddingTop: "30%",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Contact me",
-        position: "before-bottom-left",
-        style: {
-          color: "black",
-          paddingTop: "20%",
-          fontSize: "10px",
-          width: "30%",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: " ",
-        position: "before-bottom-right",
-        style: {
-          color: "black",
-          fontSize: "6px",
-          width: "10%",
-        },
-      },
-    ],
-    image: [
-      {
-        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        position: "left-center",
-        style: {
-          width: "50px",
-          margin: "10px",
-        },
-      },
-    ],
+    style: {
+      backgroundColor: "#e6e6e6",
+    },
   },
   {
     id: "5",
@@ -934,6 +964,7 @@ const getAutomaticText = (keyword: string): string | null => {
   switch (keyword) {
     case "Education":
       return "As a dedicated BCA student, I am currently in my second semester, where I am building a solid foundation in computer science and software development. Throughout my coursework, I have gained proficiency in key programming languages such as C++, JavaScript, and TypeScript, while simultaneously honing my web development skills using frameworks like React and Angular.";
+
     case "Skill":
       return "I am proficient in web development technologies, including HTML, CSS, JavaScript, and TypeScript, with experience using frameworks and libraries such as React, Redux, Bootstrap, and Tailwind CSS. I have a solid understanding of responsive design and RESTful APIs, ensuring user-friendly and accessible applications.";
     case "Contact me":
@@ -944,6 +975,8 @@ const getAutomaticText = (keyword: string): string | null => {
       return "Frontend Developer (Intern/Personal Projects)Job Search Application: Developed a web application for job seekers, incorporating user authentication and job listing features.";
     case "About me":
       return "I am eager to expand my skills in frontend development and Looking for opportunities to contribute to a dynamic team and further develop my expertise in software engineering.";
+    case "...":
+      return "singhanchal159357@gmail.com +91 999 0000 999";
     default:
       return null;
   }
@@ -993,6 +1026,13 @@ function ResumeTemp() {
           transform: "translate(-50%, -50%)",
           position: "absolute" as const,
         };
+      case "horizontal-center":
+        return {
+          top: "50%",
+          left: "37%",
+          transform: "translate(-50%, -50%)",
+          position: "absolute" as const,
+        };
       case "center-right":
         return {
           top: "50%",
@@ -1019,7 +1059,7 @@ function ResumeTemp() {
       case "bottom-right":
         return { bottom: "20px", right: "10px", position: "absolute" as const };
       case "after-top-left":
-        return { top: "40px", left: "5px", position: "absolute" as const };
+        return { top: "40px", position: "absolute" as const };
       case "before-bottom-left":
         return { bottom: "40px", left: "10px", position: "absolute" as const };
       case "before-bottom-left-with-padding":
@@ -1069,7 +1109,14 @@ function ResumeTemp() {
             >
               {text.text}
               {getAutomaticText(text.text) && (
-                <p style={{ fontSize: "4px", marginTop: "5px" }}>
+                <p
+                  style={{
+                    fontSize: "4px",
+                    marginTop: "5px",
+                    fontWeight: "normal",
+                    color: "black",
+                  }}
+                >
                   {getAutomaticText(text.text)}
                 </p>
               )}
