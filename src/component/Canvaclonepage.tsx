@@ -93,7 +93,7 @@ const InteractiveElement: React.FC = () => {
           <p>Apps</p>
         </div>
       </div>
-      <div     
+      <div
         style={{
           display: "flex",
           flexDirection: "column",
@@ -132,9 +132,19 @@ const InteractiveElement: React.FC = () => {
           overflowX: "hidden",
           overflowY: "auto",
           width: "75vw",
+
         }}
       >
-        <div style={{ height: "100vh" }}>{renderPage()}</div>
+        <div
+          style={{
+            height: "98vh",
+            boxShadow: "0px 0px 5px 0px gray",
+            width:"90%",
+            borderRadius:"10px"
+          }}
+        >
+          {renderPage()}
+        </div>
       </div>
     </div>
   );
