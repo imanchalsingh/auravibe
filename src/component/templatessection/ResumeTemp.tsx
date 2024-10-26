@@ -109,8 +109,8 @@ const resumeTemplates: Resumetemp[] = [
         style: {
           color: "black",
           fontSize: "20px",
-          fontWeight:"bold",
-          fontFamily:"Rancho"
+          fontWeight: "bold",
+          fontFamily: "Rancho",
         },
       },
       {
@@ -141,7 +141,7 @@ const resumeTemplates: Resumetemp[] = [
         style: {
           color: "black",
           fontSize: "5px",
-          paddingBottom:"22px"
+          paddingBottom: "22px",
         },
       },
       {
@@ -278,13 +278,13 @@ function ResumeTemp() {
         return { bottom: "20px", right: "10px", position: "absolute" as const };
       case "after-top-left":
         return { top: "40px", left: "5px", position: "absolute" as const };
-        case "before-bottom-left":
+      case "before-bottom-left":
         return { bottom: "40px", left: "10px", position: "absolute" as const };
-        case "before-bottom-left-with-padding":
+      case "before-bottom-left-with-padding":
         return { bottom: "30px", left: "10px", position: "absolute" as const };
-        case "before-bottom-right":
+      case "before-bottom-right":
         return { bottom: "40px", right: "10px", position: "absolute" as const };
-        case "before-bottom-right-with-padding":
+      case "before-bottom-right-with-padding":
         return { bottom: "30px", right: "10px", position: "absolute" as const };
       default:
         return {};
