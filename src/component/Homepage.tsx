@@ -3,8 +3,7 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import Imggenerator from "./ImgGenerator";
 import Editpage from "./Editpage";
 import Documentpage from "./Documentpage";
-import ResumeGenerator from "./Resumegeneratorpage";
-import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import ResumeTemplate from "./templatessection/ResumeTemp";
 import PanoramaIcon from "@mui/icons-material/Panorama";
 import SevenKPlusIcon from "@mui/icons-material/SevenKPlus";
 import WebIcon from "@mui/icons-material/Web";
@@ -30,7 +29,7 @@ const InteractiveElement: React.FC = () => {
   const renderSection = () => {
     switch (currentSection) {
       case "Resume":
-        return <ResumeGenerator />;
+        return <ResumeTemplate />;
       case "Edit Page":
         return <Editpage />;
       case "Generate Image":
@@ -91,26 +90,6 @@ const InteractiveElement: React.FC = () => {
           />
           <p>
             <small>Resume</small>
-          </p>
-        </div>
-        <div
-          style={{ textAlign: "center", padding: "10px" }}
-          onClick={() => {
-            setCurrentSection("Edit Page");
-          }}
-        >
-          <AutoFixHighIcon
-            sx={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#00cc00",
-              borderRadius: "50%",
-              padding: "5px",
-              color: "white",
-            }}
-          />
-          <p>
-            <small>Design Page</small>
           </p>
         </div>
         <div
