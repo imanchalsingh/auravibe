@@ -292,48 +292,78 @@ const resumeTemplates: Resumetemp[] = [
     texts: [
       {
         text: "Christina Morillo",
-        position: "top-right",
+        position: "top-center",
         style: {
-          color: "black",
-          fontSize: "20px",
+          color: "white",
+          fontSize: "15px",
           fontWeight: "bold",
-          fontFamily: "Rancho",
+          backgroundColor: "#001a33",
+          width: "100%",
+          paddingBottom: "20px",
+          paddingLeft:"30%",
+          
+  
         },
       },
       {
         text: "Frontend Developer",
         position: "top-center",
         style: {
-          color: "black",
+          color: "white",
           paddingTop: "25px",
           fontSize: "8px",
           width: "50%",
           paddingLeft: "20px",
+        
         },
       },
       {
         text: "Education",
-        position: "after-top-left",
+        position: "top-right",
         style: {
           color: "black",
-          paddingTop: "25px",
+          paddingTop: "25%",
           fontSize: "10px",
           fontWeight: "bold",
+          width: "50%",
         },
       },
       {
         text: "Skill",
-        position: "center-left",
+        position: "before-center-right",
         style: {
           color: "black",
-          paddingTop: "30%",
+          paddingTop: "65%",
           fontSize: "10px",
+          fontWeight: "bold",
+          width: "50%",
+        },
+      },
+      {
+        text: "About me",
+        position: "top-left",
+        style: {
+          color: "black",
+          paddingTop: "25%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+          paddingLeft: "10px",
+        },
+      },
+      {
+        text: "Experience",
+        position: "after-center-left",
+        style: {
+          color: "black",
+          fontSize: "10px",
+          width: "30%",
           fontWeight: "bold",
         },
       },
       {
         text: "Contact me",
-        position: "before-bottom-left",
+        position: "bottom-left",
         style: {
           color: "black",
           paddingTop: "20%",
@@ -344,7 +374,7 @@ const resumeTemplates: Resumetemp[] = [
       },
       {
         text: " ",
-        position: "before-bottom-right",
+        position: "bottom-right",
         style: {
           color: "black",
           fontSize: "6px",
