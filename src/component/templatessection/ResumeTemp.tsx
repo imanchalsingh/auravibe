@@ -1,6 +1,6 @@
 import React from "react";
 
-//Interfaces-------
+// Interfaces-------
 interface Text {
   text: string;
   position: string;
@@ -131,17 +131,7 @@ const resumeTemplates: Resumetemp[] = [
           color: "black",
           paddingTop: "25px",
           fontSize: "10px",
-          width: "50%",
           fontWeight: "bold",
-        },
-      },
-      {
-        text: "As a dedicated BCA student, I am currently in my second semester, where I am building a solid foundation in computer science and software development. Throughout my coursework, I have gained proficiency in key programming languages such as C++, JavaScript, and TypeScript, while simultaneously honing my web development skills using frameworks like React and Angular.",
-        position: "center-left",
-        style: {
-          color: "black",
-          fontSize: "5px",
-          paddingBottom: "22px",
         },
       },
       {
@@ -149,19 +139,9 @@ const resumeTemplates: Resumetemp[] = [
         position: "center-left",
         style: {
           color: "black",
-          paddingTop: "20%",
+          paddingTop: "30%",
           fontSize: "10px",
-          width: "50%",
           fontWeight: "bold",
-        },
-      },
-      {
-        text: "Throughout my coursework, I have gained proficiency in key programming languages such as C++, JavaScript, and TypeScript, while simultaneously honing my web development skills using frameworks like React and Angular.",
-        position: "center-left",
-        style: {
-          color: "black",
-          paddingTop: "40%",
-          fontSize: "5px",
         },
       },
       {
@@ -171,48 +151,768 @@ const resumeTemplates: Resumetemp[] = [
           color: "black",
           paddingTop: "20%",
           fontSize: "10px",
-          width: "50%",
+          width: "30%",
           fontWeight: "bold",
         },
       },
       {
-        text: "singhanchal159257@gmail.com",
-        position: "before-bottom-left-with-padding",
-        style: {
-          color: "black",
-          fontSize: "6px",
-        },
-      },
-      {
-        text: "+91 9628020787",
-        position: "bottom-left",
-        style: {
-          color: "black",
-          fontSize: "6px",
-        },
-      },
-      {
-        text: "Linkedin",
+        text: " ",
         position: "before-bottom-right",
         style: {
           color: "black",
           fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  },
+  {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
         },
       },
       {
-        text: "GitHub",
-        position: "before-bottom-right-with-padding",
+        text: "Frontend Developer",
+        position: "top-center",
         style: {
           color: "black",
-          fontSize: "6px",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
         },
       },
       {
-        text: "Instagram",
-        position: "bottom-right",
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
         style: {
           color: "black",
           fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
+        },
+      },
+    ],
+    image: [
+      {
+        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        position: "left-center",
+        style: {
+          width: "50px",
+          margin: "10px",
+        },
+      },
+    ],
+  }, {
+    id: "1",
+    texts: [
+      {
+        text: "Anchal Singh",
+        position: "top-center",
+        style: {
+          color: "black",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Rancho",
+        },
+      },
+      {
+        text: "Frontend Developer",
+        position: "top-center",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "8px",
+          width: "50%",
+          paddingLeft: "20px",
+        },
+      },
+      {
+        text: "Education",
+        position: "after-top-left",
+        style: {
+          color: "black",
+          paddingTop: "25px",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Skill",
+        position: "center-left",
+        style: {
+          color: "black",
+          paddingTop: "30%",
+          fontSize: "10px",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "before-bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: " ",
+        position: "before-bottom-right",
+        style: {
+          color: "black",
+          fontSize: "6px",
+          width: "10%",
         },
       },
     ],
@@ -228,6 +928,23 @@ const resumeTemplates: Resumetemp[] = [
     ],
   },
 ];
+
+// Helper function to get predefined text based on keywords
+const getAutomaticText = (keyword: string): string | null => {
+  switch (keyword) {
+    case "Education":
+      return "As a dedicated BCA student, I am currently in my second semester, where I am building a solid foundation in computer science and software development. Throughout my coursework, I have gained proficiency in key programming languages such as C++, JavaScript, and TypeScript, while simultaneously honing my web development skills using frameworks like React and Angular.";
+    case "Skill":
+      return "Throughout my coursework, I have gained proficiency in key programming languages such as C++, JavaScript, and TypeScript, while simultaneously honing my web development skills using frameworks like React and Angular.";
+    case "Contact me":
+      return "singhanchal159357@gmail.com +91 999 0000 999";
+    case " ":
+      return "LinkedIn GitHub Instagram";
+    default:
+      return null;
+  }
+};
+
 function ResumeTemp() {
   const getPositionStyle = (position: string): React.CSSProperties => {
     switch (position) {
@@ -290,27 +1007,32 @@ function ResumeTemp() {
         return {};
     }
   };
+
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)", // Two templates per row
-        gap: "15px", // Add some space between the templates
-        width: "60vw",
-        height: "40vh",
+        display: "flex",
+        width: "100%", // Full width to showcase the scrolling
+        overflowX: "auto", // Enables horizontal scroll
+        padding: "10px", // Adds padding around scroll area
       }}
     >
       {resumeTemplates.map((resumetemplate) => (
         <div
           key={resumetemplate.id}
           style={{
-            height: "90%",
-            width: "80%",
-            border: "2px solid gray",
+            flex: "0 0 auto", // Keeps each item from shrinking and maintains scroll
+            width: "200px", // Fixed width for a consistent preview size
+            height: "280px", // Fixed height to maintain a uniform aspect ratio
             position: "relative",
+            boxShadow: "0 0 5px rgba(0, 0, 0, 0.1)", // Subtle shadow for visual depth
+            borderRadius: "8px", // Rounded corners for a polished look
+            overflow: "hidden", // Keeps contents within bounds
+            marginRight: "15px", // Space between each template
+            backgroundColor: "#fff", // Background color for template
           }}
         >
-          {/* {/Text Rendering} */}
+          {/* Text Rendering */}
           {resumetemplate.texts?.map((text, index) => (
             <div
               key={index}
@@ -321,9 +1043,15 @@ function ResumeTemp() {
               }}
             >
               {text.text}
+              {getAutomaticText(text.text) && (
+                <p style={{ fontSize: "5px", marginTop: "5px" }}>
+                  {getAutomaticText(text.text)}
+                  <hr />
+                </p>
+              )}
             </div>
           ))}
-          {/* {/Image Rendering} */}
+          {/* Image Rendering */}
           {resumetemplate.image?.map((image, index) => (
             <div key={index}>
               <img
@@ -332,6 +1060,7 @@ function ResumeTemp() {
                 style={{
                   ...getPositionStyle(image.position),
                   ...image.style,
+                  height: "auto", // Auto height to maintain aspect ratio
                   position: "absolute",
                 }}
               />
@@ -341,6 +1070,8 @@ function ResumeTemp() {
       ))}
     </div>
   );
+  
+  
 }
 
 export default ResumeTemp;
