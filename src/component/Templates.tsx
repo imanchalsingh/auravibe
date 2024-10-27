@@ -1,5 +1,5 @@
 import React from "react";
-
+import ResumeTemp from "./templatessection/ResumeTemp";
 // TypeScript Interfaces
 interface Button {
   text?: string;
@@ -1135,7 +1135,7 @@ const templates: Template[] = [
           color: "black",
           borderRadius: "50%",
           width: "20px",
-          height:"20px"
+          height: "20px",
         },
       },
     ],
@@ -1216,10 +1216,10 @@ const TemplateRenderer: React.FC = () => {
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)", // Two templates per row
-        gap: "15px", // Add some space between the templates
-        width: "70vw",
+        display: "flex",
+        width: "100%", // Full width to showcase the scrolling
+        overflowX: "auto", // Enables horizontal scroll
+        padding: "10px",
       }}
     >
       {templates.map((template) => (
@@ -1241,7 +1241,10 @@ const TemplateRenderer: React.FC = () => {
             backgroundColor:
               template.style.imagePosition !== "background"
                 ? template.style.backgroundColor // Apply the background color when there's no background image
-                : "white", // Otherwise, set it to white or any default color
+                : "white",
+            flex: "0 0 auto",
+            marginRight: "15px",
+            width: "400px", // Otherwise, set it to white or any default color
           }}
         >
           {template.navbar &&
@@ -1336,8 +1339,10 @@ const TemplateRenderer: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div>
-      <h1>Template Renderer</h1>
+      <h1>Websites</h1>
       <TemplateRenderer />
+      <h1>Resume</h1>
+      <ResumeTemp />
     </div>
   );
 };
