@@ -122,171 +122,6 @@ const templates: Template[] = [
     templateName: "Modern",
     image: [
       {
-        url: "https://www.wallpapertip.com/wmimgs/83-838296_web-designer-professional-website-background-images.jpg",
-      },
-    ],
-    navbar: [
-      {
-        logotext: "⮙ Career Climb",
-        position: "top",
-        style: {
-          height: "20px",
-          width: "100%",
-          backgroundColor: "transparent",
-          color: "white",
-        },
-      },
-    ],
-
-    buttons: [
-      {
-        text: "Click",
-        position: "bottom-left",
-        style: {
-          backgroundColor: "#313131a4",
-          color: "white",
-          padding: "3px 20px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Navigating your career with confidence.",
-        position: "left-center",
-        style: {
-          fontSize: "15px",
-          color: "White",
-          padding: "10px",
-          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "background",
-      textAlignment: "center",
-      filter: "blur(5px)",
-    },
-  },
-  {
-    templateId: "2",
-    templateName: "Modern",
-    image: [
-      {
-        url: "https://wallpapercave.com/wp/wp2141407.jpg",
-      },
-    ],
-
-    titles: [
-      {
-        title: "Tech Mastery",
-        position: "top",
-        style: {
-          color: "black",
-          fontFamily: "Playwrite GB S",
-          fontSize: "20px",
-          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "Go ➤",
-        position: "bottom-right",
-        style: {
-          backgroundColor: "#3366ff",
-          color: "white",
-          borderRadius: "50px",
-          padding: "3px 10px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Sharpen your skills for success.",
-        position: "center-left",
-        style: {
-          fontSize: "15px",
-          color: "black",
-          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
-          width: "40%",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "background",
-      textAlignment: "center",
-    },
-  },
-  {
-    templateId: "3",
-    templateName: "Modern",
-    image: [
-      {
-        url: "https://images.pexels.com/photos/39866/entrepreneur-startup-start-up-man-39866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        style: {
-          width: "40%",
-        },
-      },
-    ],
-
-    titles: [
-      {
-        title: "Code Crafting",
-        position: "top-left",
-        style: {
-          color: "white",
-          fontFamily: "Playwrite GB S",
-          fontSize: "20px",
-          marginTop: "10px",
-        },
-      },
-    ],
-    navbar: [
-      {
-        logotext: "⧉ CodeCraft",
-        position: "top",
-        style: {
-          backgroundColor: "#008066",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "➔",
-        position: "bottom-left",
-        style: {
-          backgroundColor: "#008066",
-          color: "white",
-          padding: "2px 20px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Perfect your development journey.",
-        position: "left-center",
-        style: {
-          fontSize: "15px",
-          color: "white",
-          padding: "10px",
-          marginTop: "20px",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "right",
-      textAlignment: "left",
-      backgroundColor: "#262626",
-    },
-  },
-  {
-    templateId: "4",
-    templateName: "Modern",
-    image: [
-      {
         url: "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         style: {
           width: "100px",
@@ -360,7 +195,7 @@ const templates: Template[] = [
     },
   },
   {
-    templateId: "5",
+    templateId: "2",
     templateName: "Modern",
     image: [
       {
@@ -413,57 +248,7 @@ const templates: Template[] = [
     },
   },
   {
-    templateId: "6",
-    templateName: "Modern",
-    image: [
-      {
-        url: "https://images.pexels.com/photos/1111367/pexels-photo-1111367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      },
-    ],
-
-    titles: [
-      {
-        title: "Skill Evolution",
-        position: "top-left",
-        style: {
-          color: "white",
-          fontFamily: "Playwrite GB S",
-          fontSize: "20px",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "Login Here",
-        position: "top-right",
-        style: {
-          backgroundColor: "#313131a4",
-          color: "white",
-          padding: "3px 20px",
-          borderBottom: "3px solid white",
-          borderTop: "3px solid white",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Grow with continuous learning.",
-        position: "center-right",
-        style: {
-          fontSize: "15px",
-          color: "White",
-          padding: "10px",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "background",
-      textAlignment: "center",
-    },
-  },
-  {
-    templateId: "7",
+    templateId: "3",
     templateName: "Modern",
     image: [
       {
@@ -540,62 +325,7 @@ const templates: Template[] = [
     },
   },
   {
-    templateId: "8",
-    templateName: "Modern",
-    image: [
-      {
-        url: "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      },
-    ],
-
-    titles: [
-      {
-        title: "A tool for rapid skill-building and development.",
-        position: "center-left",
-        style: {
-          color: "white",
-          fontFamily: "Playwrite GB S",
-          fontSize: "12px",
-          width: "40%",
-          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "Check",
-        position: "bottom-center",
-        style: {
-          backgroundColor: "#f85454",
-          color: "white",
-          padding: "3px 10px",
-          borderBottom: "3px solid gray",
-          borderRadius: "10px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Turn ideas into impactful projects.",
-        position: "center-right",
-        style: {
-          fontSize: "12px",
-          color: "White",
-          padding: "10px",
-          fontFamily: "Playwrite GB S",
-          width: "40%",
-          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "background",
-      textAlignment: "center",
-    },
-  },
-  {
-    templateId: "9",
+    templateId: "4",
     templateName: "Modern",
     image: [
       {
@@ -653,135 +383,7 @@ const templates: Template[] = [
     },
   },
   {
-    templateId: "10",
-    templateName: "Modern",
-    image: [
-      {
-        url: "https://static.vecteezy.com/system/resources/previews/000/549/667/original/blue-particle-line-wave-abstract-background-modern-design-with-copy-space-vector-illustration-for-your-business-and-web-banner-design.jpg",
-      },
-    ],
-    navbar: [
-      {
-        logotext: "⋮ PrecisionCode",
-        position: "top",
-        style: {
-          height: "20px",
-          width: "100%",
-          backgroundColor: "#00264d",
-          color: "white",
-        },
-      },
-    ],
-    titles: [
-      {
-        title: "Career Elevation",
-        position: "top-left",
-        style: {
-          color: "white",
-          fontSize: "22px",
-          marginTop: "10px",
-          fontWeight: "bold",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "➤",
-        position: "bottom-right",
-        style: {
-          backgroundColor: "#009999",
-          color: "white",
-          borderRadius: "50%",
-          padding: "3px 10px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Climb the professional ladder smartly.",
-        position: "bottom-left",
-        style: {
-          fontSize: "15px",
-          color: "White",
-          padding: "10px",
-          paddingBottom: "20px",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "background",
-      textAlignment: "center",
-    },
-  },
-  {
-    templateId: "11",
-    templateName: "Modern",
-    image: [
-      {
-        url: "https://static.vecteezy.com/system/resources/previews/011/153/363/original/3d-web-developer-working-on-project-illustration-png.png",
-        style: {
-          width: "40%",
-        },
-      },
-    ],
-    navbar: [
-      {
-        logotext: "☰ Resilience Path",
-        position: "top",
-        style: {
-          height: "20px",
-          width: "100%",
-          backgroundColor: "#66ff99",
-          color: "black",
-          textAlign: "top-right",
-        },
-      },
-    ],
-    titles: [
-      {
-        title: "Innovation Drive",
-        position: "top-left",
-        style: {
-          color: "white",
-          fontSize: "22px",
-          marginTop: "10px",
-          fontWeight: "bold",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "➤",
-        position: "bottom-right",
-        style: {
-          backgroundColor: "#66ff99",
-          color: "black",
-          borderRadius: "50%",
-          padding: "3px 10px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Fuel your career with creativity.",
-        position: "bottom-left",
-        style: {
-          fontSize: "15px",
-          color: "White",
-          padding: "10px",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "right",
-      textAlignment: "left",
-      backgroundColor: "#004d80",
-    },
-  },
-  {
-    templateId: "12",
+    templateId: "5",
     templateName: "Modern",
     image: [
       {
@@ -843,7 +445,7 @@ const templates: Template[] = [
     },
   },
   {
-    templateId: "13",
+    templateId: "6",
     templateName: "Modern",
     image: [
       {
@@ -917,68 +519,7 @@ const templates: Template[] = [
     },
   },
   {
-    templateId: "14",
-    templateName: "Modern",
-    image: [
-      {
-        url: "https://images.pexels.com/photos/1111318/pexels-photo-1111318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      },
-    ],
-    navbar: [
-      {
-        logotext: "AgileSteps",
-        position: "top",
-        style: {
-          height: "20px",
-          width: "100%",
-          backgroundColor: "#b7aa97",
-          color: "#e002a3",
-        },
-      },
-    ],
-    titles: [
-      {
-        title: "Leadership Focus",
-        position: "top-right",
-        style: {
-          color: "white",
-          fontFamily: "Playwrite GB S",
-          fontSize: "20px",
-          paddingTop: "10px",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "⇨",
-        position: "bottom-right",
-        style: {
-          backgroundColor: "#e002a3",
-          color: "white",
-          borderRadius: "10px",
-          padding: "3px 10px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Shape your path to lead with confidence.",
-        position: "center-right",
-        style: {
-          fontSize: "15px",
-          color: "White",
-          padding: "10px",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "background",
-      textAlignment: "right",
-    },
-  },
-  {
-    templateId: "15",
+    templateId: "7",
     templateName: "Modern",
     image: [
       {
@@ -1041,70 +582,7 @@ const templates: Template[] = [
     },
   },
   {
-    templateId: "17",
-    templateName: "Modern",
-    image: [
-      {
-        url: "http://getwallpapers.com/wallpaper/full/d/a/5/380767.jpg",
-      },
-    ],
-    navbar: [
-      {
-        logotext: "PortFolio",
-        position: "top",
-        style: {
-          height: "20px",
-          width: "100%",
-          backgroundColor: "transparent",
-          color: "white",
-        },
-      },
-    ],
-    titles: [
-      {
-        title: "I'm Anchal Singh",
-        position: "center-right",
-        style: {
-          color: "white",
-          fontFamily: "Rancho",
-          fontSize: "30px",
-        },
-      },
-    ],
-    buttons: [
-      {
-        text: "⦿",
-        position: "bottom-right",
-        style: {
-          backgroundColor: "#313131c1",
-          color: "white",
-          borderRadius: "50%",
-          padding: "3px 10px",
-        },
-      },
-    ],
-
-    texts: [
-      {
-        text: "Software Engineer",
-        position: "top-right",
-        style: {
-          fontSize: "15px",
-          color: "White",
-          padding: "10px",
-          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)",
-          border: "2px solid white",
-          width: "50%",
-        },
-      },
-    ],
-    style: {
-      imagePosition: "background",
-      textAlignment: "center",
-    },
-  },
-  {
-    templateId: "23",
+    templateId: "8",
     templateName: "Modern",
     image: [
       {

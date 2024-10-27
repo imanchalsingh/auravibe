@@ -28,6 +28,12 @@ interface Text {
     marginLeft?: string;
     width?: string;
     height?: string;
+    borderTopLeftRadius?: string;
+    borderTopRightRadius?: string;
+    borderBottomLeftRadius?: string;
+    borderBottomRightRadius?: string;
+    zIndex?: string;
+    borderRadius?: string;
   };
 }
 
@@ -55,6 +61,7 @@ interface Image {
     width?: string;
     height?: string;
     borderRadius?: string;
+    zIndex?: string
   };
 }
 
@@ -112,17 +119,21 @@ const resumeTemplates: Resumetemp[] = [
           fontSize: "20px",
           fontWeight: "bold",
           fontFamily: "Rancho",
+          paddingLeft:"5px"
         },
       },
       {
-        text: "Sales Manager",
+        text: "Developer",
         position: "top-center",
         style: {
-          color: "black",
-          paddingTop: "25px",
+          color: "white",
           fontSize: "8px",
-          width: "50%",
-          paddingLeft: "25px",
+          width: "100%",
+          paddingLeft: "43%",
+          backgroundColor: "#003333",
+          marginTop:"25px"
+
+
         },
       },
       {
@@ -154,6 +165,20 @@ const resumeTemplates: Resumetemp[] = [
           paddingTop: "50%",
           fontSize: "10px",
           fontWeight: "bold",
+          paddingLeft: "10px",
+        },
+      },
+      {
+        text: "",
+        position: "before-bottom-left",
+        style: {
+          marginTop: "15px",
+          fontFamily: "DM Serif Text",
+          backgroundColor: "#003333",
+          width: "100%",
+          height: "2px",
+          marginBottom:"15px",
+          
         },
       },
       {
@@ -185,6 +210,7 @@ const resumeTemplates: Resumetemp[] = [
           width: "50px",
           margin: "10px",
           borderRadius: "10px",
+          border:"3px solid white"
         },
       },
     ],
@@ -357,6 +383,7 @@ const resumeTemplates: Resumetemp[] = [
           fontSize: "10px",
           fontWeight: "bold",
           fontFamily: "DM Serif Text",
+          paddingLeft: "10px",
         },
       },
       {
@@ -505,13 +532,19 @@ const resumeTemplates: Resumetemp[] = [
     id: "5",
     texts: [
       {
-        text: "Anchal Singh",
+        text: "Sophia Turner",
         position: "top-center",
         style: {
           color: "black",
-          fontSize: "20px",
+          fontSize: "15px",
           fontWeight: "bold",
-          fontFamily: "Rancho",
+          backgroundColor: "#80ffff",
+          width: "100%",
+          paddingBottom: "20px",
+          paddingLeft: "30%",
+          fontFamily: "Righteous",
+          borderTopLeftRadius: "10px",
+          borderTopRightRadius: "10px",
         },
       },
       {
@@ -527,30 +560,54 @@ const resumeTemplates: Resumetemp[] = [
       },
       {
         text: "Education",
-        position: "after-top-left",
+        position: "top-right",
         style: {
           color: "black",
-          paddingTop: "25px",
+          paddingTop: "25%",
           fontSize: "10px",
           fontWeight: "bold",
+          width: "55%",
         },
       },
       {
         text: "Skill",
-        position: "center-left",
+        position: "before-center-right",
         style: {
           color: "black",
-          paddingTop: "30%",
+          paddingTop: "65%",
           fontSize: "10px",
           fontWeight: "bold",
+          width: "55%",
         },
       },
       {
-        text: "Contact me",
-        position: "before-bottom-left",
+        text: "",
+        position: "center-left",
+        style: {
+          backgroundColor: "#80ffff",
+          marginTop: "26%",
+          width: "35%",
+          height: "100%",
+          borderBottomRightRadius: "10px",
+        },
+      },
+      {
+        text: "About me",
+        position: "top-left",
         style: {
           color: "black",
-          paddingTop: "20%",
+          paddingTop: "25%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+          paddingLeft: "10px",
+        },
+      },
+      {
+        text: "Experience",
+        position: "after-center-left",
+        style: {
+          color: "black",
           fontSize: "10px",
           width: "30%",
           fontWeight: "bold",
@@ -558,21 +615,36 @@ const resumeTemplates: Resumetemp[] = [
       },
       {
         text: " ",
-        position: "before-bottom-right",
+        position: "bottom-left",
+        style: {
+          color: "black",
+          paddingTop: "20%",
+          fontSize: "10px",
+          width: "10%",
+          fontWeight: "bold",
+        },
+      },
+      {
+        text: "Contact me",
+        position: "bottom-right",
         style: {
           color: "black",
           fontSize: "6px",
-          width: "10%",
+          width: "30%",
+          fontWeight: "bold",
         },
       },
     ],
     image: [
       {
-        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        url: "https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         position: "left-center",
         style: {
-          width: "50px",
+          width: "40px",
           margin: "10px",
+          height: "40px",
+          borderRadius: "50%",
+          padding: "3px",
         },
       },
     ],
@@ -581,13 +653,19 @@ const resumeTemplates: Resumetemp[] = [
     id: "6",
     texts: [
       {
-        text: "Anchal Singh",
+        text: "Ruby Lawson",
         position: "top-center",
         style: {
           color: "black",
-          fontSize: "20px",
+          fontSize: "14px",
           fontWeight: "bold",
-          fontFamily: "Rancho",
+          width: "100%",
+          paddingLeft: "10px",
+          backgroundColor: "#d9b3ff",
+          paddingBottom: "20px",
+          borderRadius:"50px",
+          borderLeft:"2px solid black",
+          borderRight:"2px solid black"
         },
       },
       {
@@ -595,60 +673,92 @@ const resumeTemplates: Resumetemp[] = [
         position: "top-center",
         style: {
           color: "black",
-          paddingTop: "25px",
+          paddingTop: "20px",
           fontSize: "8px",
-          width: "50%",
-          paddingLeft: "20px",
+          width: "100%",
+          paddingLeft: "10px",
+        },
+      },
+      {
+        text: "",
+        position: "after-top-left",
+        style: {
+          marginTop: "15px",
+          fontFamily: "DM Serif Text",
+          backgroundColor: "black",
+          width: "100%",
+          height: "2px",
+        },
+      },
+      {
+        text: "About me",
+        position: "top-left",
+        style: {
+          color: "#a64dff",
+          paddingTop: "25%",
+          fontSize: "10px",
+          fontWeight: "bold",
+          fontFamily: "DM Serif Text",
+          paddingLeft: "10px",
+          width: "98%",
         },
       },
       {
         text: "Education",
         position: "after-top-left",
         style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Skill",
-        position: "center-left",
-        style: {
-          color: "black",
+          color: "#a64dff",
           paddingTop: "30%",
           fontSize: "10px",
           fontWeight: "bold",
+          fontFamily: "DM Serif Text",
+          paddingLeft: "10px",
+          width: "98%",
         },
       },
       {
-        text: "Contact me",
-        position: "before-bottom-left",
+        text: "Experience",
+        position: "before-center-left",
+        style: {
+          color: "#a64dff",
+          paddingTop: "53%",
+          fontSize: "10px",
+          fontWeight: "bold",
+          fontFamily: "DM Serif Text",
+          width: "95%",
+        },
+      },
+      {
+        text: "Skills",
+        position: "center-left",
+        style: {
+          color: "#a64dff",
+          paddingTop: "58%",
+          fontSize: "10px",
+          fontWeight: "bold",
+          fontFamily: "DM Serif Text",
+          paddingLeft: "10px",
+        },
+      },
+      {
+        text: "Programming Languages: HTML, CSS, JavaScript, TypeScript, C++. Frameworks & Libraries: React, Redux, Bootstrap, Tailwind CSS. Tools & Technologies: Git, Axios, React Query, Material UI, Chart.js. Web Development: Responsive Design, RESTful APIs, User Authentication Database Management: (Add any database technologies you are familiar with, e.g., MongoDB, MySQL, Firebase) Soft Skills: Problem-solving, Communication, Team Collaboration, Time Management",
+        position: "after-center-left",
         style: {
           color: "black",
-          paddingTop: "20%",
+          paddingTop: "65%",
+          fontSize: "5px",
+          fontFamily: "DM Serif Text",
+          width: "98%",
+        },
+      },
+      {
+        text: "...",
+        position: "top-right",
+        style: {
+          color: "black",
           fontSize: "10px",
           width: "30%",
           fontWeight: "bold",
-        },
-      },
-      {
-        text: " ",
-        position: "before-bottom-right",
-        style: {
-          color: "black",
-          fontSize: "6px",
-          width: "10%",
-        },
-      },
-    ],
-    image: [
-      {
-        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        position: "left-center",
-        style: {
-          width: "50px",
-          margin: "10px",
         },
       },
     ],
@@ -657,13 +767,21 @@ const resumeTemplates: Resumetemp[] = [
     id: "7",
     texts: [
       {
-        text: "Anchal Singh",
+        text: "Lucy Marshall",
         position: "top-center",
         style: {
           color: "black",
-          fontSize: "20px",
+          fontSize: "15px",
           fontWeight: "bold",
-          fontFamily: "Rancho",
+          width: "100%",
+          paddingBottom: "20px",
+          paddingLeft: "30%",
+          fontFamily: "Righteous",
+          borderTopLeftRadius: "10px",
+          borderBottomLeftRadius: "10px",
+          zIndex:"1",
+          backgroundColor: "#ffffff",
+          
         },
       },
       {
@@ -675,34 +793,62 @@ const resumeTemplates: Resumetemp[] = [
           fontSize: "8px",
           width: "50%",
           paddingLeft: "20px",
+          zIndex:"1"
+
         },
       },
       {
         text: "Education",
-        position: "after-top-left",
+        position: "top-right",
         style: {
           color: "black",
-          paddingTop: "25px",
+          paddingTop: "25%",
           fontSize: "10px",
           fontWeight: "bold",
+          width: "55%",
         },
       },
       {
         text: "Skill",
-        position: "center-left",
+        position: "before-center-right",
         style: {
           color: "black",
-          paddingTop: "30%",
+          paddingTop: "65%",
           fontSize: "10px",
           fontWeight: "bold",
+          width: "55%",
         },
       },
       {
-        text: "Contact me",
-        position: "before-bottom-left",
+        text: "",
+        position: "center-left",
+        style: {
+          backgroundColor: "#4db8ff",
+          width: "35%",
+          height: "100%",
+          borderBottomRightRadius: "10px",
+        },
+      },
+      {
+        text: "About me",
+        position: "top-left",
         style: {
           color: "black",
-          paddingTop: "20%",
+          paddingTop: "25%",
+          fontSize: "10px",
+          width: "30%",
+          fontWeight: "bold",
+          paddingLeft: "10px",
+          zIndex:"1"
+          
+        },
+      },
+      
+      {
+        text: "Experience",
+        position: "after-center-left",
+        style: {
+          color: "black",
           fontSize: "10px",
           width: "30%",
           fontWeight: "bold",
@@ -710,249 +856,38 @@ const resumeTemplates: Resumetemp[] = [
       },
       {
         text: " ",
-        position: "before-bottom-right",
+        position: "bottom-left",
         style: {
           color: "black",
-          fontSize: "6px",
+          paddingTop: "20%",
+          fontSize: "10px",
           width: "10%",
-        },
-      },
-    ],
-    image: [
-      {
-        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        position: "left-center",
-        style: {
-          width: "50px",
-          margin: "10px",
-        },
-      },
-    ],
-  },
-  {
-    id: "8",
-    texts: [
-      {
-        text: "Anchal Singh",
-        position: "top-center",
-        style: {
-          color: "black",
-          fontSize: "20px",
-          fontWeight: "bold",
-          fontFamily: "Rancho",
-        },
-      },
-      {
-        text: "Frontend Developer",
-        position: "top-center",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "8px",
-          width: "50%",
-          paddingLeft: "20px",
-        },
-      },
-      {
-        text: "Education",
-        position: "after-top-left",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Skill",
-        position: "center-left",
-        style: {
-          color: "black",
-          paddingTop: "30%",
-          fontSize: "10px",
           fontWeight: "bold",
         },
       },
       {
         text: "Contact me",
-        position: "before-bottom-left",
-        style: {
-          color: "black",
-          paddingTop: "20%",
-          fontSize: "10px",
-          width: "30%",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: " ",
-        position: "before-bottom-right",
+        position: "bottom-right",
         style: {
           color: "black",
           fontSize: "6px",
-          width: "10%",
+          width: "30%",
+          fontWeight: "bold",
         },
       },
     ],
     image: [
       {
-        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        url: "https://images.pexels.com/photos/157661/young-woman-shooting-model-157661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         position: "left-center",
         style: {
-          width: "50px",
-          margin: "10px",
-        },
-      },
-    ],
-  },
-  {
-    id: "9",
-    texts: [
-      {
-        text: "Anchal Singh",
-        position: "top-center",
-        style: {
-          color: "black",
-          fontSize: "20px",
-          fontWeight: "bold",
-          fontFamily: "Rancho",
-        },
-      },
-      {
-        text: "Frontend Developer",
-        position: "top-center",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "8px",
-          width: "50%",
-          paddingLeft: "20px",
-        },
-      },
-      {
-        text: "Education",
-        position: "after-top-left",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Skill",
-        position: "center-left",
-        style: {
-          color: "black",
-          paddingTop: "30%",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Contact me",
-        position: "before-bottom-left",
-        style: {
-          color: "black",
-          paddingTop: "20%",
-          fontSize: "10px",
-          width: "30%",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: " ",
-        position: "before-bottom-right",
-        style: {
-          color: "black",
-          fontSize: "6px",
-          width: "10%",
-        },
-      },
-    ],
-    image: [
-      {
-        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        position: "left-center",
-        style: {
-          width: "50px",
-          margin: "10px",
-        },
-      },
-    ],
-  },
-  {
-    id: "10",
-    texts: [
-      {
-        text: "Anchal Singh",
-        position: "top-center",
-        style: {
-          color: "black",
-          fontSize: "20px",
-          fontWeight: "bold",
-          fontFamily: "Rancho",
-        },
-      },
-      {
-        text: "Frontend Developer",
-        position: "top-center",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "8px",
-          width: "50%",
-          paddingLeft: "20px",
-        },
-      },
-      {
-        text: "Education",
-        position: "after-top-left",
-        style: {
-          color: "black",
-          paddingTop: "25px",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Skill",
-        position: "center-left",
-        style: {
-          color: "black",
-          paddingTop: "30%",
-          fontSize: "10px",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: "Contact me",
-        position: "before-bottom-left",
-        style: {
-          color: "black",
-          paddingTop: "20%",
-          fontSize: "10px",
-          width: "30%",
-          fontWeight: "bold",
-        },
-      },
-      {
-        text: " ",
-        position: "before-bottom-right",
-        style: {
-          color: "black",
-          fontSize: "6px",
-          width: "10%",
-        },
-      },
-    ],
-    image: [
-      {
-        url: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        position: "left-center",
-        style: {
-          width: "50px",
-          margin: "10px",
+          width: "40px",
+          margin: "11px",
+          height: "40px",
+          borderRadius: "50%",
+          padding: "1px",
+          border:"5px solid black",
+          zIndex:"1"
         },
       },
     ],
@@ -1008,7 +943,6 @@ function ResumeTemp() {
       case "center-left":
         return {
           top: "50%",
-          left: "10px",
           transform: "translateY(-50%)",
           position: "absolute" as const,
         };
@@ -1061,7 +995,7 @@ function ResumeTemp() {
       case "after-top-left":
         return { top: "40px", position: "absolute" as const };
       case "before-bottom-left":
-        return { bottom: "40px", left: "10px", position: "absolute" as const };
+        return { bottom: "40px", position: "absolute" as const };
       case "before-bottom-left-with-padding":
         return { bottom: "30px", left: "10px", position: "absolute" as const };
       case "before-bottom-right":
