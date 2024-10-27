@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import DescriptionIcon from "@mui/icons-material/Description";
-import Imggenerator from "./ImgGenerator";
 import Editpage from "./Editpage";
 import Documentpage from "./Documentpage";
 import ResumeTemplate from "./templatessection/ResumeTemp";
-import PanoramaIcon from "@mui/icons-material/Panorama";
 import SevenKPlusIcon from "@mui/icons-material/SevenKPlus";
 import WebIcon from "@mui/icons-material/Web";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -15,16 +13,17 @@ import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import TvIcon from "@mui/icons-material/Tv";
 import AuraVibeLogo from "./auravibelogo.png";
-import Logopage from "./Logopage"
+import Logopage from "./Logopage";
+import WebsiteTemplates from "./templatessection/WebsiteTemp";
 const InteractiveElement: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<
     | "Resume"
     | "Edit Page"
-    | "Generate Image"
     | "Templates"
     | "Apps"
     | "Documents"
     | "Logo"
+    | "Website"
   >("Templates");
   const renderSection = () => {
     switch (currentSection) {
@@ -32,12 +31,12 @@ const InteractiveElement: React.FC = () => {
         return <ResumeTemplate />;
       case "Edit Page":
         return <Editpage />;
-      case "Generate Image":
-        return <Imggenerator />;
       case "Documents":
         return <Documentpage />;
-        case "Logo":
+      case "Logo":
         return <Logopage />;
+      case "Website":
+        return <WebsiteTemplates />;
       default:
         return null;
     }
@@ -95,26 +94,6 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
-          }}
-        >
-          <PanoramaIcon
-            sx={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#009999",
-              borderRadius: "50%",
-              padding: "5px",
-              color: "white",
-            }}
-          />
-          <p>
-            <small>Ai Generator</small>
-          </p>
-        </div>
-        <div
-          style={{ textAlign: "center", padding: "10px" }}
-          onClick={() => {
             setCurrentSection("Logo");
           }}
         >
@@ -135,7 +114,7 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
+            setCurrentSection("Website");
           }}
         >
           <WebIcon
@@ -175,7 +154,7 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
+            setCurrentSection("Apps");
           }}
         >
           <YouTubeIcon
@@ -195,7 +174,7 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
+            setCurrentSection("Documents");
           }}
         >
           <TvIcon
@@ -215,7 +194,7 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
+            setCurrentSection("Apps");
           }}
         >
           <VideocamIcon
@@ -235,7 +214,7 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
+            setCurrentSection("Apps");
           }}
         >
           <AspectRatioIcon
@@ -254,7 +233,7 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
+            setCurrentSection("Apps");
           }}
         >
           <CloudUploadOutlinedIcon
@@ -273,7 +252,7 @@ const InteractiveElement: React.FC = () => {
         <div
           style={{ textAlign: "center", padding: "10px" }}
           onClick={() => {
-            setCurrentSection("Generate Image");
+            setCurrentSection("Apps");
           }}
         >
           <MoreHorizOutlinedIcon
